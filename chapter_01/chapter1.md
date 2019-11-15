@@ -163,8 +163,41 @@ $$ \epsilon_{ihx}= \frac {T_1 - T_5}{T_3-T_{4'}}\centerdot \centerdot \centerdot
 压缩机运行率：
 $$ r_t = \frac {Q_{cab}}{Q_{evap}}\centerdot \centerdot \centerdot (9) $$
 制冷系统COP：
-$$ COP_{sys} = \frac{h_1-h_3}{h_{2s}-h_1} \centerdot \eta_{is} \centerdot \centerdot \centerdot(10) $$
-&emsp;&emsp;以32度环温能耗测试工况为例：环境温度维持32度不变，冷凝温度和蒸发温度在（35~45）/（-20~-30）之间变化，过冷度锁定为1.5K，假设回热系数0.85，则实际冰箱吸气温度可用公式8进行计算。
+$$ COP_{sys} =COP_{cycle}\centerdot\eta_{is}= \frac{h_1-h_3}{h_{2s}-h_1} \centerdot \eta_{is} \centerdot \centerdot \centerdot(10) $$
+&emsp;&emsp;根据公式（1），压缩机的吸气流量受容积效率$\eta_v$、吸气比容$v_1$（吸气密度$\rho_1=1/v_1$），压缩机转速$N$和扫气容积$V_k$的影响。首先假设吸气温度不变，蒸发温度从-30~-10度变化时，系统的吸气密度的变化如图,从图上可以看出，如果蒸发温度变化范围很大,则吸气流量会迅速增加。
+<center><img src = "Gas_suction_density.png"></center>
+<center>图14 吸气密度随蒸发温度和吸气温度变化曲线 </center>
+&emsp;&emsp;根据公式（3），（6）和（7）可以看出，影响蒸发器和冷凝器的负荷的主要因素就是制冷剂的流量，而制冷剂的流量和蒸发/冷凝（温度/压力）关系密切。比如同样的200L箱体,做冷藏冷冻箱时只要侧板贴冷凝器就可以了，但做透明门冷藏箱就会出现冷凝温度严重偏高的现象。
+&emsp;&emsp; 现在我们构建一个虚拟的冰箱循环，假设环境温度为32度，冷凝温度在35～45度范围内变化，蒸发温度在-30～-20度范围内变化，冷凝末端过冷度锁定为1.5K,回气温度按照公式（8）受毛细管-回气管换热器的性能影响，回热系数取0.85，则该理论冰箱循环的单位容积的制冷量和有效输入功为：
+
+$$ q_v = (h_1-h_3)/v_1 $$ 
+$$ w_v = (h_{2s}-h_1)/v_1 $$
+$$ COP_{cycle}= q_v/w_v = \frac{(h_1-h_3)}{(h_{2s}-h_1)} $$
+
+根据曲线可以看出系统的制冷量、有效输入功和COP都受到系统工况的影响：
+<center><img src = "fig2.png"></center>
+<center>图15 单位容积制冷量随蒸发、冷凝温度变化曲线 </center>
+<center><img src = "fig3.png"></center>
+<center>图16 单位容积有效压缩功随蒸发、冷凝温度变化曲线 </center>
+<center><img src = "CYCLE_COP.png"></center>
+<center>图17 循环COP随蒸发、冷凝温度变化曲线 </center>
+
+
+
+
+
+
+
+
+
+
+
+
+&emsp;&emsp;以32度环温能耗测试工况为例：环境温度维持32度不变，冷凝温度和蒸发温度在（35 ~ 45）/（-20 ~ -30）之间变化，过冷度锁定为1.5K，假设回热系数0.85，则实际冰箱吸气温度可用公式8进行计算。
+(1) 吸气流量
+&emsp;&emsp;吸气密度与吸气压力和吸气温度有关,吸气压力越大，吸气密度越高；吸气温度升高，吸气密度降低。
+                 $$\rho = \frac{P}{kT}$$
+&emsp;&emsp;
 
 
 工况变化对蒸汽压缩循环性能的影响：
