@@ -58,5 +58,5 @@ plt.xlabel("Evaporating Temperature(centigrade)")
 plt.ylabel('CYCLE COP (w/w)')
 
 plt.legend()
-plt.savefig('CYCLE_COP.png',dpi=75)
+plt.savefig('CYCLE_COP_ihx.png',dpi=75)
 plt.show()
