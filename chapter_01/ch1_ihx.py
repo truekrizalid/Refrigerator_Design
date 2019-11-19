@@ -14,8 +14,8 @@ def suctionTemp(Tk,Te,Tsub,eihx):
 ref = "R600a"
 subcoolDegree = 1.5
 condTemp = 40
-evapTemp = np.linspace(-30,-10,21)
-Eihx = np.linspace(0.85,0.95,3)
+evapTemp = np.linspace(-30,-20,21)
+Eihx = np.linspace(0.75,0.95,3)
 qv = np.zeros(3*21).reshape(3,21)
 wv = np.zeros(3*21).reshape(3,21)
 COP = np.zeros(3*21).reshape(3,21)
@@ -30,9 +30,9 @@ for i in range(len(Eihx)):
 
 
 plt.figure(figsize=(10, 5))
-plt.plot(evapTemp, qv[0,:],label = "Eihx = 0.85",linestyle='dashdot',marker = "v",color ="red")
-plt.plot(evapTemp, qv[1,:],label = "Eihx = 0.90",linestyle=':',marker = "x",color ="blue")
-plt.plot(evapTemp, qv[-1,:],label = "Eihx = 0.95",linestyle='--',marker = "d",color ="green")
+plt.plot(evapTemp, qv[0,:],label = "Eihx = %f"%Eihx[0],linestyle='dashdot',marker = "v",color ="red")
+plt.plot(evapTemp, qv[1,:],label = "Eihx = %f"%Eihx[1],linestyle=':',marker = "x",color ="blue")
+plt.plot(evapTemp, qv[-1,:],label = "Eihx = %f"%Eihx[2],linestyle='--',marker = "d",color ="green")
 plt.xlabel("Evaporating Temperature(centigrade)")
 plt.ylabel('capacity per volume(KJ/m^3)')
 plt.legend()
@@ -40,9 +40,9 @@ plt.savefig('Eihx1.png',dpi=75)
 plt.show()
 
 plt.figure(figsize=(10, 5))
-plt.plot(evapTemp, wv[0,:],label = "Eihx = 0.85",linestyle='dashdot',marker = "v",color ="red")
-plt.plot(evapTemp, wv[1,:],label = "Eihx = 0.90",linestyle=':',marker = "x",color ="blue")
-plt.plot(evapTemp, wv[-1,:],label = "Eihx = 0.95",linestyle='--',marker = "d",color ="green")
+plt.plot(evapTemp, wv[0,:],label = "Eihx = %f"%Eihx[0],linestyle='dashdot',marker = "v",color ="red")
+plt.plot(evapTemp, wv[1,:],label = "Eihx = %f"%Eihx[1],linestyle=':',marker = "x",color ="blue")
+plt.plot(evapTemp, wv[-1,:],label = "Eihx = %f"%Eihx[2],linestyle='--',marker = "d",color ="green")
 plt.xlabel("Evaporating Temperature(centigrade)")
 plt.ylabel('Effective compress work per volume(KJ/m^3)')
 
@@ -51,9 +51,9 @@ plt.savefig('Eihx2.png',dpi=75)
 plt.show()
 
 plt.figure(figsize=(10, 5))
-plt.plot(evapTemp, COP[0,:],label = "Eihx = 0.85",linestyle='dashdot',marker = "v",color ="red")
-plt.plot(evapTemp, COP[1,:],label = "Eihx = 0.90",linestyle=':',marker = "x",color ="blue")
-plt.plot(evapTemp, COP[-1,:],label = "Eihx = 0.95",linestyle='--',marker = "d",color ="green")
+plt.plot(evapTemp, COP[0,:],label = "Eihx = %f"%Eihx[0],linestyle='dashdot',marker = "v",color ="red")
+plt.plot(evapTemp, COP[1,:],label = "Eihx = %f"%Eihx[1],linestyle=':',marker = "x",color ="blue")
+plt.plot(evapTemp, COP[-1,:],label = "Eihx = %f"%Eihx[2],linestyle='--',marker = "d",color ="green")
 plt.xlabel("Evaporating Temperature(centigrade)")
 plt.ylabel('CYCLE COP (w/w)')
 
